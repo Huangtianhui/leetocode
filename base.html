@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+{% extends "bootstrap/base.html" %}
+
+{% block title %} File Management System {% endblock %}
+
+{% block navbar %}
+<div class="navbar navbar-inverse" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/" style="background-color: red">File Upload System</a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="/main" style="background-color: blue">Home</a></li>
+            </ul>
+            <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="/main" style="background-color: yellow">About us</a></li>
+            </ul>
+        </div>
+
+        </div>
+        
+
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+
+<div class="container">
+{% for message in get_flashed_messages() %}
+<div class="alert alert-warning">
+<button type="button" class="close" data-dismiss="alert">&times;</button>
+{{ message }}
+</div>
+{% endfor %}
+
+
+
+
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+  <h2 style="color: pink" style="font-size: 100px">Personal Imformation</h2>
+  <!-- <p style="color: pink" style="font-size: 100px">Alina: A postive person love software with great passion</p>             -->
+  <div class="row">
+    <div class="col-md-4">
+      <a href="pulpitrock.jpg" class="thumbnail">
+        <p  style="color: pink" style="font-size: 100px">Alina: A postive person love software with great passion. </p>  
+        <style type=background-image: 10px>
+            background-image: url("static/images/4.pic.jpg");
+        </style>
+
+       <!--  <img src="pulpitrock.jpg" alt="Pulpit Rock" style="width:150px;height:150px">
+        <img src=" url("static/images/4.pic.jpg")"> -->
+      </a>
+    </div>
+    
+    
+  </div>
+</div>
+
+</body>
+
+
+
+{% block page_content %}{% endblock %}
+</div>
+
+{% endblock %}

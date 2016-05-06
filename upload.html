@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block title %} File Management System {% endblock %}
+
+{% block page_content %}
+
+    <h1 style="color: pink" style="font-size: 100px">Welcome User: {{ username }}</h1>
+
+
+    <h3 >Upload files</h3>
+    <form action="{{'upload'}}" method="post" enctype="multipart/form-data">
+        <input style="font-size: 20px" type="file" name="file" />
+        <br />
+        <input style="font-size: 20px" type="submit" value="submit" />
+    </form>
+
+
+    <h3>Files list</h3>
+    <ul>
+    {% for name in list %}
+       <li><a href="/file?name={{name}}&files=./static/Uploads/{{name}}" >{{ name }}</a></li>
+    {% endfor %}
+    </ul>
+
+{% endblock %}
+
